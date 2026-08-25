@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkfp1hdbfycsd" path="res://assets/waiting-room-table.png" id="3_bfy3h"]
 [ext_resource type="Texture2D" uid="uid://qe1ex8j7kkyj" path="res://assets/tilefloor.png" id="4_1w08l"]
 [ext_resource type="Texture2D" uid="uid://b5ey5ow4yj6gq" path="res://assets/walltiles-waiting-room.png" id="6_bfy3h"]
+[ext_resource type="PackedScene" uid="uid://ba67wug8npk02" path="res://scenes/characters/patient_01.tscn" id="7_0lh4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfy3h"]
 texture = ExtResource("4_1w08l")
@@ -47,6 +48,7 @@ position = Vector2(332, 306)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1406674072]
 zoom = Vector2(3.035, 3.035)
+process_callback = 0
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=5293698]
 z_index = -1
@@ -58,3 +60,6 @@ z_index = -2
 position = Vector2(0, -16)
 tile_map_data = PackedByteArray("AAANAAUAAAAAAAAAAAAOAAUAAAABAAAAAAAPAAUAAAADAAAAAAAQAAUAAAACAAAAAAARAAUAAAADAAAAAAASAAUAAAADAAAAAAATAAUAAAABAAAAAAAUAAUAAAADAAAAAAAVAAUAAAADAAAAAAAWAAUAAAADAAAAAAAXAAUAAAABAAAAAAAYAAUAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_yf5fn")
+
+[node name="Patient01" parent="." unique_id=1744825451 instance=ExtResource("7_0lh4v")]
+position = Vector2(362, 261)

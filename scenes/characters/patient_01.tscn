@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ba67wug8npk02"]
+
+[ext_resource type="Texture2D" uid="uid://ch7ureva40hn7" path="res://assets/patient01.png" id="1_fogkd"]
+[ext_resource type="Script" uid="uid://e5tyutkanema" path="res://scripts/NPCs/patient_01.gd" id="1_ygmbj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
+height = 22.0
+
+[node name="Patient01" type="CharacterBody2D" unique_id=1744825451]
+script = ExtResource("1_ygmbj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=451304624]
+texture = ExtResource("1_fogkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738011101]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_bhunq")
+
+[node name="MoveCooldownTimer" type="Timer" parent="." unique_id=1566706733]
+one_shot = true
+autostart = true
+
+[node name="MoveTimer" type="Timer" parent="." unique_id=246236950]
+
+[connection signal="timeout" from="MoveCooldownTimer" to="." method="_on_move_cooldown_timer_timeout"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

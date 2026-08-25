@@ -1,0 +1,60 @@
+[gd_scene format=4 uid="uid://d2efxx7pl6ixp"]
+
+[ext_resource type="PackedScene" uid="uid://dui5sk5bxmen5" path="res://scenes/characters/player.tscn" id="2_1v0db"]
+[ext_resource type="Texture2D" uid="uid://cdqfso0256emf" path="res://assets/watercooler.png" id="2_1w08l"]
+[ext_resource type="PackedScene" uid="uid://hsh2ikqk4qo2" path="res://scenes/decoration/house_plant_1.tscn" id="2_tx65t"]
+[ext_resource type="Texture2D" uid="uid://bkfp1hdbfycsd" path="res://assets/waiting-room-table.png" id="3_bfy3h"]
+[ext_resource type="Texture2D" uid="uid://qe1ex8j7kkyj" path="res://assets/tilefloor.png" id="4_1w08l"]
+[ext_resource type="Texture2D" uid="uid://b5ey5ow4yj6gq" path="res://assets/walltiles-waiting-room.png" id="6_bfy3h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfy3h"]
+texture = ExtResource("4_1w08l")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+sources/0 = SubResource("TileSetAtlasSource_bfy3h")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lh4v"]
+texture = ExtResource("6_bfy3h")
+texture_region_size = Vector2i(16, 40)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yf5fn"]
+tile_size = Vector2i(16, 40)
+sources/0 = SubResource("TileSetAtlasSource_0lh4v")
+
+[node name="test_level" type="Node2D" unique_id=409056388]
+
+[node name="Decoration" type="Node2D" parent="." unique_id=1006133407]
+
+[node name="HousePlant1" parent="Decoration" unique_id=539220720 instance=ExtResource("2_tx65t")]
+position = Vector2(216, 226)
+
+[node name="Watercooler" type="Sprite2D" parent="Decoration" unique_id=839696034]
+position = Vector2(392, 223)
+texture = ExtResource("2_1w08l")
+
+[node name="WaitingRoomTable" type="Sprite2D" parent="Decoration" unique_id=684499600]
+position = Vector2(304, 275)
+texture = ExtResource("3_bfy3h")
+
+[node name="Player" parent="." unique_id=1495380353 instance=ExtResource("2_1v0db")]
+position = Vector2(332, 306)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1406674072]
+zoom = Vector2(3.035, 3.035)
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=5293698]
+z_index = -1
+tile_map_data = PackedByteArray("AAANAA4AAAAAAAAAAAANAA8AAAAAAAAAAAANABAAAAAAAAAAAAANABEAAAAAAAAAAAANABIAAAAAAAAAAAANABMAAAAAAAAAAAANABQAAAAAAAAAAAAOAA4AAAAAAAAAAAAOAA8AAAAAAAAAAAAOABAAAAAAAAAAAAAOABEAAAAAAAAAAAAOABIAAAAAAAAAAAAOABMAAAAAAAAAAAAOABQAAAAAAAAAAAAPAA4AAAAAAAAAAAAPAA8AAAAAAAAAAAAPABAAAAAAAAAAAAAPABEAAAAAAAAAAAAPABIAAAAAAAAAAAAPABMAAAAAAAAAAAAPABQAAAAAAAAAAAAQAA4AAAAAAAAAAAAQAA8AAAAAAAAAAAAQABAAAAAAAAAAAAAQABEAAAAAAAAAAAAQABIAAAAAAAAAAAAQABMAAAAAAAAAAAAQABQAAAAAAAAAAAARAA4AAAAAAAAAAAARAA8AAAAAAAAAAAARABAAAAAAAAAAAAARABEAAAAAAAAAAAARABIAAAAAAAAAAAARABMAAAAAAAAAAAARABQAAAAAAAAAAAASAA4AAAAAAAAAAAASAA8AAAAAAAAAAAASABAAAAAAAAAAAAASABEAAAAAAAAAAAASABIAAAAAAAAAAAASABMAAAAAAAAAAAASABQAAAAAAAAAAAATAA4AAAAAAAAAAAATAA8AAAAAAAAAAAATABAAAAAAAAAAAAATABEAAAAAAAAAAAATABIAAAAAAAAAAAATABMAAAAAAAAAAAATABQAAAAAAAAAAAAUAA4AAAAAAAAAAAAUAA8AAAAAAAAAAAAUABAAAAAAAAAAAAAUABEAAAAAAAAAAAAUABIAAAAAAAAAAAAUABMAAAAAAAAAAAAUABQAAAAAAAAAAAAVAA4AAAAAAAAAAAAVAA8AAAAAAAAAAAAVABAAAAAAAAAAAAAVABEAAAAAAAAAAAAVABIAAAAAAAAAAAAVABMAAAAAAAAAAAAVABQAAAAAAAAAAAAWAA4AAAAAAAAAAAAWAA8AAAAAAAAAAAAWABAAAAAAAAAAAAAWABEAAAAAAAAAAAAWABIAAAAAAAAAAAAWABMAAAAAAAAAAAAWABQAAAAAAAAAAAAXAA4AAAAAAAAAAAAXAA8AAAAAAAAAAAAXABAAAAAAAAAAAAAXABEAAAAAAAAAAAAXABIAAAAAAAAAAAAXABMAAAAAAAAAAAAXABQAAAAAAAAAAAAYAA4AAAAAAAAAAAAYAA8AAAAAAAAAAAAYABAAAAAAAAAAAAAYABEAAAAAAAAAAAAYABIAAAAAAAAAAAAYABMAAAAAAAAAAAAYABQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=48394515]
+z_index = -2
+position = Vector2(0, -16)
+tile_map_data = PackedByteArray("AAANAAUAAAAAAAAAAAAOAAUAAAABAAAAAAAPAAUAAAADAAAAAAAQAAUAAAACAAAAAAARAAUAAAADAAAAAAASAAUAAAADAAAAAAATAAUAAAABAAAAAAAUAAUAAAADAAAAAAAVAAUAAAADAAAAAAAWAAUAAAADAAAAAAAXAAUAAAABAAAAAAAYAAUAAAAEAAAAAAA=")
+tile_set = SubResource("TileSet_yf5fn")

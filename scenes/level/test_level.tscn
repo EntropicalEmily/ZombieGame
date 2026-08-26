@@ -28,6 +28,8 @@ texture_region_size = Vector2i(16, 40)
 tile_size = Vector2i(16, 40)
 sources/0 = SubResource("TileSetAtlasSource_0lh4v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
 [node name="test_level" type="Node2D" unique_id=409056388]
 
 [node name="Decoration" type="Node2D" parent="." unique_id=1006133407]
@@ -63,3 +65,33 @@ tile_set = SubResource("TileSet_yf5fn")
 
 [node name="Patient01" parent="." unique_id=1744825451 instance=ExtResource("7_0lh4v")]
 position = Vector2(362, 261)
+
+[node name="Bounds" type="Node2D" parent="." unique_id=519559174]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bounds" unique_id=760426681]
+position = Vector2(198, 258)
+scale = Vector2(1, 7.8800025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D" unique_id=1980051727]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bounds" unique_id=641459163]
+position = Vector2(272, 200)
+scale = Vector2(12.839997, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D2" unique_id=1558793725]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Bounds" unique_id=1515896102]
+position = Vector2(409, 220)
+scale = Vector2(1, 13.319998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D3" unique_id=513380144]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Bounds" unique_id=178554550]
+position = Vector2(278, 345)
+scale = Vector2(12.160003, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D4" unique_id=1971711011]
+shape = SubResource("RectangleShape2D_g4v7s")
